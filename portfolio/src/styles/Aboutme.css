@@ -1,0 +1,22 @@
+.aboutme {
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    display: flex;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    height: 60%;
+}
+
+.meat {
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    margin: 15px;
+}
