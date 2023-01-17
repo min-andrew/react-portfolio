@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer a {
+    margin: 5px;
+}
+
+.footer img {
+    height: 40px;
+}
