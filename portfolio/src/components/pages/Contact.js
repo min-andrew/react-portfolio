@@ -1,22 +1,45 @@
-import React from 'react';
+import React, { useState } from "react";
 
-export default function Contact() {
+const FORM_ENDPOINT = ""; // TODO - fill on the later step
+
+const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 100);
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <h2>Thank you!</h2>
+        <div>We'll be in touch soon.</div>
+      </>
+    );
+  }
+
   return (
-    <div>
-      <h1>Contact Me</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-    </div>
+    <form
+      action={FORM_ENDPOINT}
+      onSubmit={handleSubmit}
+      method="POST"
+      target="_blank"
+    >
+      <div>
+        <input type="text" placeholder="Your name" name="name" required />
+      </div>
+      <div>
+        <input type="email" placeholder="Email" name="email" required />
+      </div>
+      <div>
+        <textarea placeholder="Your message" name="message" required />
+      </div>
+      <div>
+        <button type="submit"> Send a message </button>
+      </div>
+    </form>
   );
-}
+};
+
+export default Contact;

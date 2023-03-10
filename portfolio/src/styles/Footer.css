@@ -1,11 +1,11 @@
 .footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     list-style-type: none;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
-    width: 100%;
-    justify-content: center;
+    width: 94%;
+    align-items: flex-end;
 }
 
 .footer a {
